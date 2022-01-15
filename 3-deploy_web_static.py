@@ -1,5 +1,5 @@
-!/usr/bin/python3
-# creates and distributes an archive to your web servers, using the function deploy
+#!/usr/bin/python3
+# creates and distributes an archive to your web servers
 
 from fabric.api import *
 import os.path
@@ -41,9 +41,9 @@ def do_deploy(archive_path):
         return False
 
 
-    def deploy():
-        """Creates and distributes and archive to a server"""
-        archive_path = do_pack()
-        if archive_path is None:
-            return False
-        return do_deploy(archive_path)
+def deploy():
+    """Creates and distributes and archive to a server"""
+    archive_path = do_pack()
+    if archive_path is None:
+        return False
+    return do_deploy(archive_path)
