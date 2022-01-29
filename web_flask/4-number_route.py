@@ -37,9 +37,9 @@ def pcool(text="is cool"):
 
 @app.route('/number/<n>', strict_slashes=False)
 def n_int(n):
-    """display Python, followed by the value of the text variable """
+    """display “n is a number” only if n is an integer """
     if type(n) is int:
-        return "{}is a number".format(n)
+        return "{} is a number".format(n)
 
 
 if __name__ == "__main__":
