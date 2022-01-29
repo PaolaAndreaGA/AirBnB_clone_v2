@@ -27,6 +27,7 @@ def cfun(text):
     return "C {}".format(ntext)
 
 
+@app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def pcool(text="is cool"):
     """ """
