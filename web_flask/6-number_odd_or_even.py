@@ -42,5 +42,17 @@ def n_int(n):
         return "{} is a number".format(n)
 
 
+@app.route('/number_template/<int:n>', strict_slashes=False)
+def n_tem(n):
+    """display a HTML page only if n is an integer """
+    """if isinstance(n, int):"""
+    return render_template('5-number.html')
+
+
+@app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
+def display_HTML_n(n):
+    return render_template('6-number_odd_or_even.html', num=n)
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
