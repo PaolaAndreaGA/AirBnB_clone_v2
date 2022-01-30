@@ -46,7 +46,7 @@ def n_int(n):
 def n_tem(n):
     """display a HTML page only if n is an integer """
     """if isinstance(n, int):"""
-        return render_template('5-number.html')
+    return render_template('5-number.html')
 
 
 if __name__ == "__main__":
