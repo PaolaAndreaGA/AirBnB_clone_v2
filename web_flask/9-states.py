@@ -23,8 +23,8 @@ def states_id(id):
         if state.id == str(id):
             return render_template('9-states.html', states=state)
         return render_template('9-states.html', not_found=True)
-    
-    
+
+
 @app.teardown_appcontext
 def storage_close(self):
     """ Datasource """
