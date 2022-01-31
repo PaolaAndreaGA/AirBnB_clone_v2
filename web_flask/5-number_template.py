@@ -40,9 +40,13 @@ def n_int(n):
     """display “n is a number” only if n is an integer """
     if type(n) is int:
         return "{} is a number".format(n)
-
-
-
+    
+    
+    @app.route('/number_template/<int:n>', strict_slashes=False)
+def show_tag(n):
+    """tag html"""
+    if isinstance(n, int):
+        return render_template('5-number.html', num=n)
 
 
 if __name__ == "__main__":
