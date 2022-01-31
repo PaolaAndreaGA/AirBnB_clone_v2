@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Flask web application """
+"""
+Starts a Flask web application
+"""
 
 from http.client import FOUND
 from flask import Flask, render_template
@@ -10,24 +12,24 @@ app = Flask(__name__)
 
 @app.route('/states', strict_slashes=False)
 def states():
-    """ states path """
+    """states"""
     states = storage.all(State)
     return render_template('9-states.html', states=states, id=False)
 
 
 @app.route('/states/<id>', strict_slashes=False)
 def states_id(id):
-    """ states_id_path """
+    """states with filter (Objects State)"""
     states = storage.all(State)
     for state in states.values():
         if state.id == str(id):
             return render_template('9-states.html', states=state)
-        return render_template('9-states.html', not_found=True)
+    return render_template('9-states.html', no_found=True)
 
 
 @app.teardown_appcontext
 def storage_close(self):
-    """ Datasource """
+    '''Datasource'''
     storage.close()
 
 
