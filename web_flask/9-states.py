@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""""""
+"""  starts a Flask web application """
 
 from http.client import FOUND
 from flask import Flask, render_template
