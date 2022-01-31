@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""starts a Flask web application
+"""
+starts a Flask web application
 """
 
 
@@ -37,7 +38,7 @@ def pcool(text="is cool"):
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def n_int(n):
-    """display “n is a number” only if n is an integer """
+    """display n is a number only if n is an integer """
     if type(n) is int:
         return "{} is a number".format(n)
 
