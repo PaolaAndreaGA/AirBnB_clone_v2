@@ -51,7 +51,7 @@ class FileStorage:
             with open(FileStorage.__file_path, 'r') as f:
                 temp = json.load(f)
                 for key, val in temp.items():
-                        self.all()[key] = classes[val['__class__']](**val)
+                    self.all()[key] = classes[val['__class__']](**val)
         except FileNotFoundError:
             pass
 
@@ -63,7 +63,7 @@ class FileStorage:
             for key, value in FileStorage.__objects.items():
                 if obj == value:
                     del FileStorage.__objects[key]
-        except:
+        except Exception:
             pass
 
     def close(self):
