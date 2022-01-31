@@ -2,43 +2,39 @@
 """
 starts a Flask web application
 """
-
-
-from flask import Flask
-
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
 def index():
-    """index domain"""
+    """display"""
     return "Hello HBNB!"
 
 
 @app.route('/hbnb', strict_slashes=False)
 def index2():
-    """index domain"""
+    """display"""
     return "HBNB"
 
 
 @app.route('/c/<text>', strict_slashes=False)
 def cfun(text):
-    """display C followed by the value of the text variable """
-    ntext = text.replace('_', ' ')
-    return "C {}".format(ntext)
+    """pass a data and show the data"""
+    new_text = text.replace('_', ' ')
+    return "C {}".format(new_text)
 
 
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def pcool(text="is cool"):
-    """display Python, followed by the value of the text variable """
-    ptext = text.replace('_', ' ')
-    return "Python {}".format(ptext)
+    """pass a deta ans show the data"""
+    return "Python {}".format(text.replace('_', ' '))
 
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def n_int(n):
-    """display n is a number only if n is an integer """
+    """pass a deta ans show the data"""
     if type(n) is int:
         return "{} is a number".format(n)
 
