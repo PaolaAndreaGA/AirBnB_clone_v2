@@ -29,7 +29,7 @@ def states_id(id):
         if state.id == str(id):
             return render_template('9-states.html', states=state)
         return render_template('9-states.html', not_found=True)
-    
-    
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000,)
